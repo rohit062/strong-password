@@ -1,0 +1,30 @@
+{
+  "name": "strong-password",
+  "version": "0.0.1",
+  "description": "This module generates secure password",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rohit062/strong-password.git"
+  },
+  "keywords": [
+    "password",
+    "secure-password",
+    "secure",
+    "pass",
+    "strong",
+    "strong-password"
+  ],
+  "author": "Rohit Salaria",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rohit062/strong-password/issues"
+  },
+  "homepage": "https://github.com/rohit062/strong-password#readme"
+}
