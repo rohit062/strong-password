@@ -21,15 +21,15 @@ describe('Testing Password Generator Class', () => {
     test('Check Property Exists', () => {
       console.log("djkandnak",sPwd);
       expect(sPwd.length).toBe(__pwdConfig.length); // check the length of the pwd
-      // expect(sPwd.split('').filter(c => c === c.toUpperCase()).length).tbBe(__pwdConfig.UChar); // check no of upper case character
-      // expect(sPwd.split('').filter(c => c === c.toLowerCase()).length).tbBe(__pwdConfig.LChar); // check no of lower case character 
-      // expect(sPwd.split('').filter(c => iChars.indexOf(c) != -1).length).tbBe(__pwdConfig.SChar); // check no of Special character 
-      // expect(sPwd.split('').filter(c => iNumber.indexOf(c) != -1).length).tbBe(__pwdConfig.Number); // check no of number
+      expect(sPwd.split('').filter(c => c === c.toUpperCase()).length).tbBe(__pwdConfig.UChar); // check no of upper case character
+      expect(sPwd.split('').filter(c => c === c.toLowerCase()).length).tbBe(__pwdConfig.LChar); // check no of lower case character 
+      expect(sPwd.split('').filter(c => iChars.indexOf(c) != -1).length).tbBe(__pwdConfig.SChar); // check no of Special character 
+      expect(sPwd.split('').filter(c => iNumber.indexOf(c) != -1).length).tbBe(__pwdConfig.Number); // check no of number
 
     })
-    // test('Check Property Exists', () => {
+    test('Check Property Exists', () => {
 
-    // })
+    })
   });
 
   /**
