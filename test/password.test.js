@@ -1,7 +1,7 @@
 let password = require('../lib/password');
 
-const iChars = "~`!#$%^&*+=-[]\\';,/{}|\":<>?";
-const iNumber = "~`!#$%^&*+=-[]\\';,/{}|\":<>?";
+const iChars = new RegExp(/[^A-Za-z0-9]/);
+const iNumber =  new RegExp(/\d/);
 const upperCaseReg = new RegExp(/[A-Z]/);
 const lowerCaseReg = new RegExp(/[a-z]/);
 
@@ -21,17 +21,16 @@ describe('Testing Password Generator Class', () => {
     let __pwdObject = new password(__pwdConfig);
     let sPwd = __pwdObject.generate();
     test('Check Property Exists', () => {
-      console.log("djkandnak",sPwd);
-      // expect(sPwd.length).toBe(__pwdConfig.length); // check the length of the pwd
+      expect(sPwd.length).toBe(__pwdConfig.length); // check the length of the pwd
       expect(sPwd.split('').filter(c => upperCaseReg.test(c)).length).toBe(__pwdConfig.UChar); // check no of upper case character
       expect(sPwd.split('').filter(c => lowerCaseReg.test(c)).length).toBe(__pwdConfig.LChar); // check no of lower case character 
-      // expect(sPwd.split('').filter(c => iChars.indexOf(c) != -1).length).toBe(__pwdConfig.SChar); // check no of Special character 
-      // expect(sPwd.split('').filter(c => iNumber.indexOf(c) != -1).length).toBe(__pwdConfig.Number); // check no of number
+      expect(sPwd.split('').filter(c => iChars.test(c)).length).toBe(__pwdConfig.SChar); // check no of Special character 
+      expect(sPwd.split('').filter(c => iNumber.test(c)).length).toBe(__pwdConfig.Number); // check no of number
 
     })
-    test('Check Property Exists', () => {
+    // test('Check Property Exists', () => {
 
-    })
+    // })
   });
 
   /**
